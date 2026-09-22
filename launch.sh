@@ -53,17 +53,17 @@ RUNTIME_MB=27
 # NextUI hands its tools a log directory; use it when it is there so the
 # message lands where that user already looks.
 if [ -n "$LOGS_PATH" ] && [ -d "$LOGS_PATH" ]; then
-    ERRLOG="$LOGS_PATH/RetroHub.txt"
+    ERRLOG="$LOGS_PATH/ZimRetroHub.txt"
 else
-    ERRLOG="$SDCARD_PATH/RetroHub-loi.txt"
+    ERRLOG="$SDCARD_PATH/ZimRetroHub-loi.txt"
 fi
 
-log() { echo "[RetroHub] $*"; }
+log() { echo "[ZimRetroHub] $*"; }
 
 fatal() {
     log "$1"
     {
-        echo "RetroHub khong khoi dong duoc / RetroHub could not start"
+        echo "ZimRetroHub khong khoi dong duoc / ZimRetroHub could not start"
         echo "$(date 2>/dev/null)"
         echo
         echo "$1"
@@ -182,7 +182,7 @@ if [ -z "$PY" ]; then
 "Hay lam mot trong hai cach sau:
 
 1. Tai ban cai day du cua ZimRetrohub tai
-   https://github.com/mxtmod-lab/ZimRetrohub/releases va chep de len thu muc Apps/RetroHub.
+   https://github.com/mxtmod-lab/ZimRetrohub/releases va chep de len thu muc Apps/ZimRetroHub.
 
 2. Noi may vao Wi-Fi roi mo lai ZimRetrohub - app se tu tai ban chay ve.
 
@@ -238,7 +238,7 @@ while true; do
             mv -f "$HOTFIX_DST.tmp" "$HOTFIX_DST"
             rm -f "$ERRLOG" 2>/dev/null
             rm -rf "$APP/rh/__pycache__" "$APP/rh/modals/__pycache__" 2>/dev/null
-            log "Da tai ban va cuu ho thanh cong. Khoi dong lai RetroHub..."
+            log "Da tai ban va cuu ho thanh cong. Khoi dong lai ZimRetroHub..."
             continue
         fi
         break

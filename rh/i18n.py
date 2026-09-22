@@ -5,7 +5,7 @@ from . import state
 
 TEXTS = {
     "VI": {
-        "app_title": "RETROHUB",
+        "app_title": "ZIMRETROHUB",
         "wifi_ip": "IP Wi-Fi: ",
         "not_connected": "Chưa kết nối Wi-Fi",
         "home_item_library": "Thư viện game",
@@ -797,7 +797,7 @@ TEXTS = {
         "store_src_archive": "KHO INTERNET ARCHIVE"
     },
     "EN": {
-        "app_title": "RETROHUB",
+        "app_title": "ZIMRETROHUB",
         "wifi_ip": "Wi-Fi IP: ",
         "not_connected": "Wi-Fi Not Connected",
         "home_item_library": "Game Library",

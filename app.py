@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""RetroHub - Premium Retro Gaming Platform & Multi-Source ROM Store for TrimUI Handhelds."""
+"""ZimRetroHub - Premium Retro Gaming Platform & Multi-Source ROM Store for TrimUI Handhelds."""
 
 import os
 import sys
