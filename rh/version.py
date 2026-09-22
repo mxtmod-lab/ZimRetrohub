@@ -1,0 +1,52 @@
+# -*- coding: utf-8 -*-
+"""Single source of truth for the build number.
+
+The build script reads APP_VERSION from here to name the release, and the
+updater compares it against the version in the published manifest, so the
+constant must stay in sync with the git tag."""
+
+# 2.35 da duoc phat hanh lai (ban refactor repo) duoi dung so phien ban do,
+# nen may dang chay 2.35 khong thay co ban moi. 2.36 la ban dau tien lon hon no.
+# 2.39: ban gom cac fix sau 2.38 - hang cho tai, OTA lap lai, Switch emulator
+# core, Storage trang, tran panel phai o man chi tiet game, va tinh nang YouTube.
+# 2.40: tu dong tai boxart & load truoc dung luong game; sua loi tim duong dan
+# ROM sau khi bung; sua font dieu huong DPAD tranh loi glyph.
+# 2.41: sua vong lap cap nhat OTA (buoc bo gia lap bi bo qua vi loi ten cuc bo
+# trong modal, man hinh dung o 95%), them nut Huy khi dang tai, nut Bo qua co tac
+# dung that, kho game khong con moi cap nhat sai tren may cai tu file zip, va
+# gia lap J2ME doc dung che do ban phim nguoi dung chon.
+# 2.42: giam nhiet/pin - chi ve khi co thay doi (4 khung/giay khi ranh), nhan dien dung
+# man hinh tat tren TrimUI Brick (Allwinner disp), man hinh tat thi LED tat han, cache
+# duong dan anh bia + tran cache (RAM anh bia 70MB -> 21MB), huy ket qua cu khi doi tab/video.
+# 2.43: menu Retro Store (Grid 3x2), tich hop 1.400+ ROMs Google Drive va nang cap Webgame.
+# 2.44: bao mat toan dien - loai bo token Telegram va API key AI khoi codebase, chuyen sang Cloudflare Worker Proxy.
+# 2.45: sua loi cai gia lap Java J2ME tren the nho FAT32 ([Errno 5] Input/output error), co che giai nen da tang an toan va tiet kiem RAM.
+# 2.46: bao mat & nang cap - proxy quet Google Drive qua Cloudflare Worker, ho tro dry-run va toi uu bo nap secrets.
+# 2.47: ha tang CDN - tich hop Cloudflare R2 CDN (cdn.xuanhoa493.com) tai sieu toc cho gia lap, theme, icon va catalog.
+# 2.48: Kho ung dung (App Store) tien ich, cai toan bo gia lap hang loat va toi uu giao dien/modal.
+# 2.49: cap nhat landing page va huong dan cai dat, chuyen link tai ROM Stock Full Brick Pro ve trang release goc cua TrimUI.
+# 2.50: sua loi mo game Dreamcast/Naomi, bao toan romset Arcade Naomi/Atomiswave (khong giai nen), ho tro sidecar .gdi va tu dong loc track con trong thu vien.
+# 2.51: cap nhat hang cho tai game - theo doi tien do tai truc quan, toi uu tai box art.
+# 2.52: goi cai RetroArch All-in-One (303 cores, autoconfig tay cam, BIOS) tren App Store & CDN; dong bo va chuan hoa luong kiem tra gia lap Java J2ME.
+# 2.53: toi gian giao dien Kho Gia Lap thanh 1 tuy chon duy nhat (Cai toan bo) va hop nhat toan bo thanh 1 luong cai dat dong bo.
+# 2.54: mo app tuc thi (< 300ms) va chong do lan dau - nap man hinh lazy, tri hoan tac vu ngam tranh tranh chap I/O the nho, bo socket probe va sdl2.ext.
+# 2.55: sua loi PortMaster tren App Store - tuong thich TrimUI Stock OS, tu dong va launch.sh, nap Python3 vao PATH va cau hinh moi truong SDL2/Data.
+# 2.56: tu dong cai dat toan bo gia lap (Java, NDS, PSP,...) & PortMaster lan dau mo app kem modal theo doi tien trinh truc quan.
+APP_VERSION = "2.56"
+
+
+
+def version_tuple(v=None):
+    """Split a version string into ints so 1.10 sorts after 1.9.
+
+    Anything unparsable sorts lowest, which makes a malformed manifest look
+    older than the running build instead of triggering a bogus update."""
+    try:
+        return tuple(int(p) for p in str(v or APP_VERSION).strip().lstrip("v").split("."))
+    except (TypeError, ValueError):
+        return (0,)
+
+
+def is_newer(remote, local=None):
+    """True when *remote* is a strictly later version than *local*."""
+    return version_tuple(remote) > version_tuple(local)
