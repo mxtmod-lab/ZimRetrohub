@@ -2,7 +2,6 @@
 __pycache__/
 *.py[cod]
 *.pyo
-*.pyd
 *.pyc
 .Python
 *.egg-info/
@@ -10,10 +9,6 @@ dist/
 build/
 *.egg
 .eggs/
-
-# Virtual envs / Python runtime (downloaded at runtime)
-python/
-vendor/python/
 
 # Secrets / credentials - NEVER commit these
 rh/secrets.json
