@@ -102,10 +102,7 @@ class HomeScreen(BaseScreen):
                 self.engine.open_modal(TwoColInfoModal(self.engine), {
                     "title": tr("donate_title"),
                     "rows": [
-                        (tr("donate_bank"), "Techcombank"),
-                        (tr("donate_holder"), "NGUYEN XUAN HOA"),
-                        (tr("donate_acct"), "1732 8888 88"),
-                        ("BuyMeACoffee", "buymeacoffee.com/xuanhoa493"),
+                        ("GitHub", "github.com/mxtmod-lab/ZimRetrohub"),
                     ]
                 })
             elif item_id == "nav_settings":

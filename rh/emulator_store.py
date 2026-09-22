@@ -20,7 +20,7 @@ from .emulators import resolve_core_name, _config_of
 # Cloudflare R2 CDN la kenh phan phoi uu tien so 1 (APAC edge, egress free).
 # GitHub Releases giu vai tro du phong (fallback) khi mat mang hoac loi edge.
 ONLINE_CDN_BASE = "https://cdn.xuanhoa493.com/"
-GITHUB_RAW_BASE = "https://github.com/nguyenxuanhoa493/repohubtool/releases/download/assets/"
+GITHUB_RAW_BASE = "https://github.com/mxtmod-lab/ZimRetrohub/releases/download/assets/"
 ASSET_BASE = ONLINE_CDN_BASE
 
 

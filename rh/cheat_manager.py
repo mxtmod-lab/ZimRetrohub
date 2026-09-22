@@ -222,9 +222,9 @@ def get_cheats_index():
                 pass
 
     index_urls = [
-        "https://cdn.jsdelivr.net/gh/nguyenxuanhoa493/repohubtool@main/files/rh/cheats_index.json.gz",
-        "https://ghproxy.net/https://raw.githubusercontent.com/nguyenxuanhoa493/repohubtool/main/files/rh/cheats_index.json.gz",
-        "https://raw.githubusercontent.com/nguyenxuanhoa493/repohubtool/main/files/rh/cheats_index.json.gz",
+        "https://cdn.jsdelivr.net/gh/mxtmod-lab/ZimRetrohub@main/rh/cheats_index.json.gz",
+        "https://raw.githubusercontent.com/mxtmod-lab/ZimRetrohub/main/rh/cheats_index.json.gz",
+        "https://ghproxy.net/https://raw.githubusercontent.com/mxtmod-lab/ZimRetrohub/main/rh/cheats_index.json.gz",
     ]
     for index_url in index_urls:
         try:

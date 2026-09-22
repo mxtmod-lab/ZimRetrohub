@@ -18,7 +18,7 @@ from . import paths
 from .storage import unlock
 
 ONLINE_CDN_BASE = "https://cdn.xuanhoa493.com/"
-GITHUB_RAW_BASE = "https://github.com/nguyenxuanhoa493/repohubtool/releases/download/assets/"
+GITHUB_RAW_BASE = "https://github.com/mxtmod-lab/ZimRetrohub/releases/download/assets/"
 ASSET_BASE = ONLINE_CDN_BASE
 
 

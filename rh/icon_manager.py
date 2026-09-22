@@ -35,7 +35,7 @@ from .i18n import tr
 
 # Icon zips phan phoi uu tien qua Cloudflare R2 CDN; fallback GitHub Releases.
 ASSET_BASE = "https://cdn.xuanhoa493.com/icons/"
-GITHUB_ASSET_BASE = "https://github.com/nguyenxuanhoa493/repohubtool/releases/download/assets/"
+GITHUB_ASSET_BASE = "https://github.com/mxtmod-lab/ZimRetrohub/releases/download/assets/"
 
 _SSL_CTX = None
 try:

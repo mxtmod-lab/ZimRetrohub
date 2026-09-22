@@ -43,9 +43,9 @@ export PYSDL2_DLL_PATH="$APP/libs:/usr/trimui/lib:/usr/lib64:/usr/lib"
 # throw away a runtime that took a download to get.
 CACHE_DIR="$SDCARD_PATH/.retrohub"
 CACHE_PY="$CACHE_DIR/python/bin/python3"
-RUNTIME_URL="https://github.com/nguyenxuanhoa493/repohubtool/releases/download/runtime-python-3.11.16-aarch64/python-3.11.16-aarch64.tar.gz"
-RUNTIME_SHA="67f320dc29bf98d93c81263de37875cfef47debfdcce6b97e1c3f3ee97bbd01b"
-RUNTIME_MB=20
+RUNTIME_URL="https://github.com/mxtmod-lab/ZimRetrohub/releases/download/runtime-python-3.11.14-aarch64/python-3.11.14-aarch64.tar.gz"
+RUNTIME_SHA="bb998dbad759a6299288ad76646ee1ff3ce110b91d35718ed73160bd72a2a3b2"
+RUNTIME_MB=27
 
 # There is no console on a handheld: stdout vanishes and the menu redraws over
 # everything. A file at the root of the card is the only message the user can
@@ -181,16 +181,16 @@ if [ -z "$PY" ]; then
         fatal "May khong co Python va tai ban chay ve khong thanh cong." \
 "Hay lam mot trong hai cach sau:
 
-1. Tai ban cai day du cua RetroHub (da kem san Python) tai
-   https://retrohub.xuanhoa493.com va chep de len thu muc Apps/RetroHub.
+1. Tai ban cai day du cua ZimRetrohub tai
+   https://github.com/mxtmod-lab/ZimRetrohub/releases va chep de len thu muc Apps/RetroHub.
 
-2. Noi may vao Wi-Fi roi mo lai RetroHub - app se tu tai ban chay ve.
+2. Noi may vao Wi-Fi roi mo lai ZimRetrohub - app se tu tai ban chay ve.
 
 --
 The device has no Python and downloading the runtime failed.
-Either reinstall RetroHub from the full package (Python included) at
-https://retrohub.xuanhoa493.com, or connect the device to Wi-Fi and
-open RetroHub again so it can fetch the runtime itself."
+Either reinstall ZimRetrohub from the full package at
+https://github.com/mxtmod-lab/ZimRetrohub/releases, or connect the device to Wi-Fi and
+open ZimRetrohub again so it can fetch the runtime itself."
     fi
 fi
 
@@ -226,7 +226,7 @@ while true; do
         # Tu dong cuu ho neu app bi vang / loi khoi dong (Self-Healing)
         export RETROHUB_RECOVERED=1
         log "Phat hien app bi loi (exit code $APP_EXIT_CODE). Dang thu tu dong cuu ho..."
-        HOTFIX_URL="https://raw.githubusercontent.com/nguyenxuanhoa493/repohubtool/main/files/rh/modals/__init__.py"
+        HOTFIX_URL="https://raw.githubusercontent.com/mxtmod-lab/ZimRetrohub/main/rh/modals/__init__.py"
         HOTFIX_DST="$APP/rh/modals/__init__.py"
         HOTFIX_OK=1
         if command -v curl >/dev/null 2>&1; then

@@ -27,10 +27,10 @@ from .version import APP_VERSION, is_newer
 
 # Where releases are published. Overridable from settings.json so a repo move
 # does not need a rebuild.
-UPDATE_BASE_URL = "https://raw.githubusercontent.com/nguyenxuanhoa493/repohubtool/main"
-CDN_BASE_URL = "https://cdn.jsdelivr.net/gh/nguyenxuanhoa493/repohubtool@main"
+UPDATE_BASE_URL = "https://raw.githubusercontent.com/mxtmod-lab/ZimRetrohub/main"
+CDN_BASE_URL = "https://cdn.jsdelivr.net/gh/mxtmod-lab/ZimRetrohub@main"
 GHPROXY_BASE_URL = "https://ghproxy.net/" + UPDATE_BASE_URL
-CLOUDFLARE_CDN_BASE = "https://cdn.xuanhoa493.com"
+CLOUDFLARE_CDN_BASE = "https://raw.githubusercontent.com/mxtmod-lab/ZimRetrohub/main"
 
 # Nhung dinh dang jsDelivr chan (HTTP 403 Forbidden) thi bo qua khong goi CDN
 CDN_EXCLUDED_EXTS = (".jar", ".zip", ".exe")
